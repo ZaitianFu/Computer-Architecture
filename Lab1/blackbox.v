@@ -1,0 +1,28 @@
+module blackbox(w, l, f, v);
+    output w;
+    input  l, f, v;
+    wire   w01, w14, w17, w19, w20, w28, w31, w32, w34, w35, w38, w44, w60, w65, w71, w76, w83, w89, w91, w92, w94, w95;
+    or  o3(w, w17, w35, w94);
+    and a49(w17, w76, w65, w20);
+    not n8(w20, w34);
+    and a33(w35, w65, w34, w76);
+    and a9(w94, w83, w01);
+    not n59(w83, w65);
+    or  o13(w01, w32, w31);
+    and a22(w32, w76, w34);
+    and a5(w31, w71, w76);
+    not n85(w71, w34);
+    or  o48(w65, w28, w44, w19);
+    not n86(w28, l);
+    not n81(w44, f);
+    not n53(w19, v);
+    and a43(w34, w92, w95);
+    not n52(w92, f);
+    or  o23(w95, w60, w91);
+    not n93(w60, v);
+    and a79(w91, l, v);
+    and a30(w76, w89, w14);
+    not n67(w89, v);
+    or  o6(w14, w38, l);
+    not n45(w38, f);
+endmodule // blackbox

@@ -1,0 +1,41 @@
+Grades for version committed on time
+	keypad: 20.0 / 20
+			*Passed test: abcdefg = 48
+			*Passed test: abcdefg = 28
+			*Passed test: abcdefg = 18
+			*Passed test: abcdefg = 44
+			*Passed test: abcdefg = 24
+			*Passed test: abcdefg = 14
+			*Passed test: abcdefg = 42
+			*Passed test: abcdefg = 22
+			*Passed test: abcdefg = 12
+			*Passed test: abcdefg = 21
+			*Passed test: abcdefg = 00
+		
+	extract_message: 40.0 / 40
+			*Passed test: simple
+				*Encoded message: [46, 56, 1, 34, 70, 127, 127, 0] (.8"F).
+				*Expected decode: [100, 121, 113, 99, 98, 107, 112, 0] (dyqcbkp)
+				*Actual decode: [100, 121, 113, 99, 98, 107, 112, 0] (dyqcbkp)
+			*Passed test: 3 words
+				*Encoded message: [229, 198, 80, 104, 2, 255, 255, 0, 151, 66, 165, 32, 130, 255, 247, 0, 99, 164, 37, 55, 128, 255, 247, 0, 11, 1, 6, 12, 9, 15, 15, 0] (åÆPhÿÿB¥ ÿ÷c¤%7ÿ÷	).
+				*Expected decode: [97, 114, 99, 104, 100, 105, 111, 99, 101, 115, 101, 32, 97, 108, 98, 117, 109, 105, 110, 32, 104, 111, 97, 114, 115, 101, 108, 121, 0] (archdiocese albumin hoarsely)
+				*Actual decode: [97, 114, 99, 104, 100, 105, 111, 99, 101, 115, 101, 32, 97, 108, 98, 117, 109, 105, 110, 32, 104, 111, 97, 114, 115, 101, 108, 121, 0, 0, 0, 0] (archdiocese albumin hoarsely)
+			*Passed test: 5 words
+				*Encoded message: [117, 71, 107, 139, 36, 255, 255, 0, 248, 20, 105, 32, 17, 255, 253, 0, 104, 81, 0, 160, 85, 255, 253, 0, 139, 22, 206, 71, 16, 255, 223, 0, 119, 107, 27, 12, 96, 255, 127, 0, 179, 81, 55, 145, 110, 255, 255, 0, 2, 3, 3, 1, 0, 3, 3, 0] (uGk$ÿÿøi ÿýhQ UÿýÎGÿßwk`ÿ³Q7nÿÿ).
+				*Expected decode: [111, 110, 115, 108, 97, 117, 103, 104, 116, 32, 98, 101, 115, 109, 101, 97, 114, 32, 112, 97, 114, 105, 115, 104, 105, 111, 110, 101, 114, 32, 108, 101, 103, 103, 105, 110, 101, 115, 115, 32, 111, 117, 116, 112, 111, 117, 114, 105, 110, 103, 0] (onslaught besmear parishioner legginess outpouring)
+				*Actual decode: [111, 110, 115, 108, 97, 117, 103, 104, 116, 32, 98, 101, 115, 109, 101, 97, 114, 32, 112, 97, 114, 105, 115, 104, 105, 111, 110, 101, 114, 32, 108, 101, 103, 103, 105, 110, 101, 115, 115, 32, 111, 117, 116, 112, 111, 117, 114, 105, 110, 103, 0, 0, 0, 0, 0, 0] (onslaught besmear parishioner legginess outpouring)
+			*Passed test: Thousands of words
+				*Output hidden (too long)
+		
+	count_ones: 40.0 / 40
+			*Passed test: 2
+			*Passed test: 55
+			*Passed test: 42
+			*Passed test: 0xffffffff
+			*Passed test: 0x12345678
+			*Passed test: 0x55555555
+		
+Total: 100.0 / 100
+
+Final Score: 100.0 / 100

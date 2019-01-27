@@ -1,0 +1,152 @@
+#! /usr/bin/vvp
+:ivl_version "10.2 (stable)" "(v10_2)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1eef8f0 .scope module, "logicunit_test" "logicunit_test" 2 1;
+ .timescale 0 0;
+v0x1f1b700_0 .var "A", 0 0;
+v0x1f1b7c0_0 .var "B", 0 0;
+v0x1f1b860_0 .var "control", 1 0;
+v0x1f1b950_0 .net "out", 0 0, L_0x1f1c890;  1 drivers
+S_0x1effef0 .scope module, "ol" "logicunit" 2 22, 3 2 0, S_0x1eef8f0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "A"
+    .port_info 2 /INPUT 1 "B"
+    .port_info 3 /INPUT 2 "control"
+L_0x1f1b9f0 .functor AND 1, v0x1f1b700_0, v0x1f1b7c0_0, C4<1>, C4<1>;
+L_0x1f1bb00 .functor OR 1, v0x1f1b700_0, v0x1f1b7c0_0, C4<0>, C4<0>;
+L_0x1f1bb90 .functor NOR 1, v0x1f1b700_0, v0x1f1b7c0_0, C4<0>, C4<0>;
+L_0x1f1bd40 .functor XOR 1, v0x1f1b700_0, v0x1f1b7c0_0, C4<0>, C4<0>;
+v0x1f1af60_0 .net "A", 0 0, v0x1f1b700_0;  1 drivers
+v0x1f1b040_0 .net "B", 0 0, v0x1f1b7c0_0;  1 drivers
+v0x1f1b100_0 .net "control", 1 0, v0x1f1b860_0;  1 drivers
+v0x1f1b1a0_0 .net "out", 0 0, L_0x1f1c890;  alias, 1 drivers
+v0x1f1b290_0 .net "w00", 0 0, L_0x1f1b9f0;  1 drivers
+v0x1f1b3d0_0 .net "w01", 0 0, L_0x1f1bb00;  1 drivers
+v0x1f1b4c0_0 .net "w10", 0 0, L_0x1f1bb90;  1 drivers
+v0x1f1b5b0_0 .net "w11", 0 0, L_0x1f1bd40;  1 drivers
+S_0x1f000e0 .scope module, "o0" "mux4" 3 13, 4 16 0, S_0x1effef0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "A"
+    .port_info 2 /INPUT 1 "B"
+    .port_info 3 /INPUT 1 "C"
+    .port_info 4 /INPUT 1 "D"
+    .port_info 5 /INPUT 2 "control"
+v0x1f1a810_0 .net "A", 0 0, L_0x1f1b9f0;  alias, 1 drivers
+v0x1f1a8d0_0 .net "B", 0 0, L_0x1f1bb00;  alias, 1 drivers
+v0x1f1a9a0_0 .net "C", 0 0, L_0x1f1bb90;  alias, 1 drivers
+v0x1f1aaa0_0 .net "D", 0 0, L_0x1f1bd40;  alias, 1 drivers
+v0x1f1ab70_0 .net "ab", 0 0, L_0x1f1c040;  1 drivers
+v0x1f1acb0_0 .net "cd", 0 0, L_0x1f1c3e0;  1 drivers
+v0x1f1ada0_0 .net "control", 1 0, v0x1f1b860_0;  alias, 1 drivers
+v0x1f1ae40_0 .net "out", 0 0, L_0x1f1c890;  alias, 1 drivers
+L_0x1f1c0b0 .part v0x1f1b860_0, 0, 1;
+L_0x1f1c4f0 .part v0x1f1b860_0, 0, 1;
+L_0x1f1c990 .part v0x1f1b860_0, 1, 1;
+S_0x1f01ea0 .scope module, "mab" "mux2" 4 22, 4 2 0, S_0x1f000e0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "A"
+    .port_info 2 /INPUT 1 "B"
+    .port_info 3 /INPUT 1 "control"
+L_0x1f1bdd0 .functor NOT 1, L_0x1f1c0b0, C4<0>, C4<0>, C4<0>;
+L_0x1f1be40 .functor AND 1, L_0x1f1b9f0, L_0x1f1bdd0, C4<1>, C4<1>;
+L_0x1f1bf40 .functor AND 1, L_0x1f1bb00, L_0x1f1c0b0, C4<1>, C4<1>;
+L_0x1f1c040 .functor OR 1, L_0x1f1be40, L_0x1f1bf40, C4<0>, C4<0>;
+v0x1f020e0_0 .net "A", 0 0, L_0x1f1b9f0;  alias, 1 drivers
+v0x1f191c0_0 .net "B", 0 0, L_0x1f1bb00;  alias, 1 drivers
+v0x1f19280_0 .net "control", 0 0, L_0x1f1c0b0;  1 drivers
+v0x1f19350_0 .net "not_control", 0 0, L_0x1f1bdd0;  1 drivers
+v0x1f19410_0 .net "out", 0 0, L_0x1f1c040;  alias, 1 drivers
+v0x1f19520_0 .net "wA", 0 0, L_0x1f1be40;  1 drivers
+v0x1f195e0_0 .net "wB", 0 0, L_0x1f1bf40;  1 drivers
+S_0x1f19720 .scope module, "mcd" "mux2" 4 23, 4 2 0, S_0x1f000e0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "A"
+    .port_info 2 /INPUT 1 "B"
+    .port_info 3 /INPUT 1 "control"
+L_0x1f1c150 .functor NOT 1, L_0x1f1c4f0, C4<0>, C4<0>, C4<0>;
+L_0x1f1c1e0 .functor AND 1, L_0x1f1bb90, L_0x1f1c150, C4<1>, C4<1>;
+L_0x1f1c2e0 .functor AND 1, L_0x1f1bd40, L_0x1f1c4f0, C4<1>, C4<1>;
+L_0x1f1c3e0 .functor OR 1, L_0x1f1c1e0, L_0x1f1c2e0, C4<0>, C4<0>;
+v0x1f19980_0 .net "A", 0 0, L_0x1f1bb90;  alias, 1 drivers
+v0x1f19a40_0 .net "B", 0 0, L_0x1f1bd40;  alias, 1 drivers
+v0x1f19b00_0 .net "control", 0 0, L_0x1f1c4f0;  1 drivers
+v0x1f19bd0_0 .net "not_control", 0 0, L_0x1f1c150;  1 drivers
+v0x1f19c90_0 .net "out", 0 0, L_0x1f1c3e0;  alias, 1 drivers
+v0x1f19da0_0 .net "wA", 0 0, L_0x1f1c1e0;  1 drivers
+v0x1f19e60_0 .net "wB", 0 0, L_0x1f1c2e0;  1 drivers
+S_0x1f19fa0 .scope module, "mout" "mux2" 4 24, 4 2 0, S_0x1f000e0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "A"
+    .port_info 2 /INPUT 1 "B"
+    .port_info 3 /INPUT 1 "control"
+L_0x1f1c620 .functor NOT 1, L_0x1f1c990, C4<0>, C4<0>, C4<0>;
+L_0x1f1c690 .functor AND 1, L_0x1f1c040, L_0x1f1c620, C4<1>, C4<1>;
+L_0x1f1c790 .functor AND 1, L_0x1f1c3e0, L_0x1f1c990, C4<1>, C4<1>;
+L_0x1f1c890 .functor OR 1, L_0x1f1c690, L_0x1f1c790, C4<0>, C4<0>;
+v0x1f1a210_0 .net "A", 0 0, L_0x1f1c040;  alias, 1 drivers
+v0x1f1a2e0_0 .net "B", 0 0, L_0x1f1c3e0;  alias, 1 drivers
+v0x1f1a3b0_0 .net "control", 0 0, L_0x1f1c990;  1 drivers
+v0x1f1a480_0 .net "not_control", 0 0, L_0x1f1c620;  1 drivers
+v0x1f1a520_0 .net "out", 0 0, L_0x1f1c890;  alias, 1 drivers
+v0x1f1a610_0 .net "wA", 0 0, L_0x1f1c690;  1 drivers
+v0x1f1a6d0_0 .net "wB", 0 0, L_0x1f1c790;  1 drivers
+    .scope S_0x1eef8f0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1f1b700_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1f1b7c0_0, 0, 1;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x1f1b860_0, 0, 2;
+    %end;
+    .thread T_0;
+    .scope S_0x1eef8f0;
+T_1 ;
+    %delay 1, 0;
+    %load/vec4 v0x1f1b700_0;
+    %nor/r;
+    %store/vec4 v0x1f1b700_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x1eef8f0;
+T_2 ;
+    %delay 2, 0;
+    %load/vec4 v0x1f1b7c0_0;
+    %nor/r;
+    %store/vec4 v0x1f1b7c0_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x1eef8f0;
+T_3 ;
+    %vpi_call 2 11 "$dumpfile", "logicunit.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x1eef8f0 {0 0 0};
+    %delay 16, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x1f1b860_0, 0, 2;
+    %delay 16, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x1f1b860_0, 0, 2;
+    %delay 16, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x1f1b860_0, 0, 2;
+    %delay 16, 0;
+    %vpi_call 2 18 "$finish" {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "logicunit_tb.v";
+    "logicunit.v";
+    "mux.v";
